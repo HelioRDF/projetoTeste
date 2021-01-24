@@ -35,17 +35,17 @@ class _DialogViewState extends State<DialogView> {
       body: Column(
         children: [
           ListaUsuario(pessoas),
-          FlatButton(
-            child: Text("Cadastrar"),
-            onPressed: () => {
-              showModalBottomSheet(
-                  context: context,
-                  builder: (_) {
-                    return FormInput(_salvar);
-                  })
-            },
-          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (_) {
+                return FormInput(_salvar);
+              });
+        },
+        child: Icon(Icons.add_box),
       ),
     );
   }
