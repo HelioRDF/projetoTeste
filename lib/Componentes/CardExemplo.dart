@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projetoTeste/View/FontFamily.dart';
 import 'package:projetoTeste/View/Input.dart';
 import 'package:projetoTeste/View/ListViewBuild.dart';
 import 'package:projetoTeste/View/DialogView.dart';
@@ -48,6 +49,19 @@ class CardExemplo extends StatelessWidget {
                 onPressed: () => {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => DialogView()))
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: FlatButton(
+                minWidth: double.infinity,
+                child: Text("FontFamily"),
+                onPressed: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FontFamily()))
                 },
               ),
             ),

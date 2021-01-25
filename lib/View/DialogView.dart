@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:projetoTeste/Componentes/FormInput.dart';
-import 'package:projetoTeste/Componentes/ListaUsu%C3%A1rio.dart';
 import 'package:projetoTeste/Model/Pessoa.dart';
 
 class DialogView extends StatefulWidget {
@@ -9,7 +8,7 @@ class DialogView extends StatefulWidget {
 }
 
 class _DialogViewState extends State<DialogView> {
-  List<Pessoa> pessoas = [Pessoa(nome: "Primeira", idade: 31)];
+  List<Pessoa> pessoas = [];
 
   _salvar(nomeP, idadeP) {
     Pessoa pessoa = Pessoa(nome: nomeP, idade: idadeP);
@@ -32,11 +31,32 @@ class _DialogViewState extends State<DialogView> {
       appBar: AppBar(
         title: Text("Dialog"),
       ),
-      body: Column(
-        children: [
-          ListaUsuario(pessoas),
-        ],
-      ),
+      body: pessoas.isEmpty
+          ? Container(
+              height: 400,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Nenhuma Informação cadastrada"),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Image.asset(
+                      "assets/image/waiting.png",
+                      fit: BoxFit.cover,
+                      width: 50,
+                    ),
+                  )
+                ],
+              ),
+            )
+          : Text(""),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
