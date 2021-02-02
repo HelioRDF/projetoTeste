@@ -66,6 +66,19 @@ class CardExemplo extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: FlatButton(
+                minWidth: double.infinity,
+                child: Text("DatePick"),
+                onPressed: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FontFamily()))
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
