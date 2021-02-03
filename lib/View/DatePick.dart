@@ -17,9 +17,10 @@ class _DatePickState extends State<DatePick> {
             firstDate: DateTime.now(),
             lastDate: DateTime(DateTime.now().year + 1))
         .then((data) => {
-              setState(() {
-                _dataSelecionada = data;
-              })
+              if (data != null)
+                setState(() {
+                  _dataSelecionada = data;
+                })
             });
   }
 
