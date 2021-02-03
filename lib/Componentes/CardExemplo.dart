@@ -20,7 +20,7 @@ class CardExemplo extends StatelessWidget {
           EstruturaCard("Dialog", DialogView()),
           EstruturaCard("FontFamily", FontFamily()),
           EstruturaCard("Flexible e Expanded", Flexible_Expanded()),
-          EstruturaCard("DatePick",DatePick()),
+          EstruturaCard("DatePick", DatePick()),
         ],
       ),
     );
