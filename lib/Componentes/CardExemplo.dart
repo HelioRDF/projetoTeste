@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:projetoTeste/View/DatePick.dart';
+import 'package:projetoTeste/View/Flexible_Expanded.dart';
 import 'package:projetoTeste/View/FontFamily.dart';
 import 'package:projetoTeste/View/Input.dart';
 import 'package:projetoTeste/View/ListViewBuild.dart';
 import 'package:projetoTeste/View/DialogView.dart';
+
+import 'EstruturaCard.dart';
 
 class CardExemplo extends StatelessWidget {
   @override
@@ -11,61 +15,12 @@ class CardExemplo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 15, bottom: 8, left: 8, right: 8),
-            child: Card(
-              child: FlatButton(
-                minWidth: double.infinity,
-                child: Text(
-                  "Input & List",
-                ),
-                onPressed: () => {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Input()))
-                },
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: FlatButton(
-                minWidth: double.infinity,
-                child: Text("ListView.Build"),
-                onPressed: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ListViewBuild()))
-                },
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: FlatButton(
-                minWidth: double.infinity,
-                child: Text("Dialog"),
-                onPressed: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DialogView()))
-                },
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: FlatButton(
-                minWidth: double.infinity,
-                child: Text("FontFamily"),
-                onPressed: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FontFamily()))
-                },
-              ),
-            ),
-          ),
+          EstruturaCard("Input & List", Input()),
+          EstruturaCard("ListView.Build com ListTile", ListViewBuild()),
+          EstruturaCard("Dialog", DialogView()),
+          EstruturaCard("FontFamily", FontFamily()),
+          EstruturaCard("Flexible e Expanded", Flexible_Expanded()),
+          EstruturaCard("DatePick",DatePick()),
         ],
       ),
     );

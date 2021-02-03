@@ -82,18 +82,24 @@ class _ListViewBuildState extends State<ListViewBuild> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20, left: 5),
+                padding: EdgeInsets.only(top: 20),
                 child: Container(
                     height: 350,
                     child: ListView.builder(
                         itemCount: _listaPessoas.length,
                         itemBuilder: (context, indice) {
                           Pessoa pessoa = _listaPessoas[indice];
-                          return Row(
-                            children: [
-                              Text(
-                                  "Nome: ${pessoa.nome} \t\t\t Idade: ${pessoa.idade.toString()}"),
-                            ],
+                          return Card(
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                radius: 25,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: FittedBox(child: Text("User:")),
+                                  )),
+                              title: Text(pessoa.nome),
+                              subtitle: Text("Idade:"+pessoa.idade.toString()),
+                            ),
                           );
                         })),
               )

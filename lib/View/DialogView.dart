@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:projetoTeste/Componentes/FormInput.dart';
 import 'package:projetoTeste/Model/Pessoa.dart';
 
+import '../Componentes/ListaUsuário.dart';
+
 class DialogView extends StatefulWidget {
   @override
   _DialogViewState createState() => _DialogViewState();
@@ -56,7 +58,7 @@ class _DialogViewState extends State<DialogView> {
                 ],
               ),
             )
-          : Text(""),
+          : ListaUsuario(pessoas),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
